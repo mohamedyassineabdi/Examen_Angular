@@ -1,0 +1,30 @@
+<div class="details-overlay">
+  <div class="details-modal" *ngIf="book; else loading">
+    <div class="details-actions">
+      <button class="fav-small" (click)="toggleFav()" [title]="isFav() ? 'Retirer de la wishlist' : 'Ajouter à la wishlist'" [class.fav-on]="isFav()">{{ isFav() ? '❤' : '♡' }}</button>
+      <button class="close-btn" (click)="onClose()">× Fermer</button>
+    </div>
+    <div class="modal-body">
+      <div class="cover-column">
+        <img class="cover-large" [src]="book.cover_id ? ('https://covers.openlibrary.org/b/id/' + book.cover_id + '-L.jpg') : 'assets/placeholder.png'" alt="{{ book.title }}">
+      </div>
+      <div class="info-column">
+        <h2>{{ book.title }}</h2>
+        <h3 *ngIf="book.subtitle">{{ book.subtitle }}</h3>
+        <p *ngIf="displayYear">Année: {{ displayYear }}</p>
+        <p *ngIf="authors?.length">Auteurs: {{ authors.join(', ') }}</p>
+        <p *ngIf="editionCount">Éditions: {{ editionCount }}</p>
+        <p *ngIf="subjects?.length">Sujets: <span class="subjects">{{ subjects.join(', ') }}</span></p>
+        <div class="description" *ngIf="descriptionText">
+          <p>{{ descriptionText }}</p>
+        </div>
+        <div *ngIf="!descriptionText">
+          <p>Aucune description disponible.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<ng-template #loading>
+  <p>Chargement du livre...</p>
+</ng-template>

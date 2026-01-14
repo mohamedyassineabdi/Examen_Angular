@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <rect width="200" height="200" rx="12" fill="#0b2f6b"/>
+  <g transform="translate(22,22) scale(0.8)" fill="#fff">
+    <circle cx="78" cy="22" r="10" fill="#fff" />
+    <path d="M70 36h16v80H70zM62 28h32v8H62z" fill="#fff"/>
+    <text x="110" y="120" font-family="Georgia, serif" font-size="32" font-weight="700">IHEC</text>
+  </g>
+</svg>

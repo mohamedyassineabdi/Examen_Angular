@@ -1,0 +1,14 @@
+<div class="book-grid">
+  <div class="book-card" *ngFor="let book of displayedBooks">
+    <div class="fav-btn" (click)="$event.stopPropagation(); toggleFavorite(book)" [title]="isFav(book) ? 'Retirer de la wishlist' : 'Ajouter à la wishlist'">
+        <span [class.fav-on]="isFav(book)">{{ isFav(book) ? '❤' : '♡' }}</span>
+      </div>
+    <div class="book-link" (click)="openDetails(book)" role="button" tabindex="0">
+      <img class="cover" [src]="book.cover_id ? 'https://covers.openlibrary.org/b/id/' + book.cover_id + '-M.jpg' : 'assets/placeholder.png'" alt="{{ book.title }}">
+      <h3 class="title">{{ book.title }}</h3>
+    </div>
+  </div>
+</div>
+
+<!-- Modal popup for details -->
+<app-book-details *ngIf="selectedBook" [book]="selectedBook" (close)="closeDetails()"></app-book-details>

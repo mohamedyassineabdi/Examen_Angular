@@ -1,0 +1,13 @@
+<div class="search-bar">
+  <div class="filters">
+    <div class="filter-group">
+      <input class="search-input" [(ngModel)]="title" (ngModelChange)="onTitleInput($event)" placeholder="Recherche par titre" />
+      <button class="search-btn" (click)="searchTitleNow()">Rechercher</button>
+    </div>
+
+    <div class="filter-group">
+      <input class="year-input" type="number" [(ngModel)]="year" (ngModelChange)="onYearInput($event)" placeholder="Année de 1re édition" />
+      <button class="search-btn" (click)="searchYearNow()">Rechercher</button>
+    </div>
+  </div>
+</div>

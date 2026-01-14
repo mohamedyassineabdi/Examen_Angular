@@ -1,0 +1,44 @@
+.head-bar {
+  padding: 0.5rem 1rem;
+  background: var(--ihec-primary);
+  border-bottom: 4px solid var(--ihec-accent);
+}
+.head-content {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.logo {
+  height: 56px;
+  width: auto;
+  object-fit: contain;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.03);
+  padding: 6px;
+}
+.app-title {
+  color: var(--ihec-on-primary);
+  font-size: 1.9rem;
+  font-weight: 700;
+  font-family: 'Georgia', serif;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+.title-wrap { display: flex; align-items: center; }
+.head-bar { position: relative; }
+.wishlist-toggle{
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: 2px solid rgba(255,255,255,0.12);
+  color: var(--ihec-on-primary);
+  font-size: 1.05rem;
+  padding: 6px 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.wishlist-toggle:hover{ background: rgba(255,255,255,0.06); }

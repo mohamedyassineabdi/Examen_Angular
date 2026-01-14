@@ -1,0 +1,18 @@
+<div class="wishlist-overlay">
+  <div class="wishlist-box">
+    <header class="whead">
+      <h3>Ma Wishlist</h3>
+      <button class="close" (click)="close()">×</button>
+    </header>
+    <div class="wlist" *ngIf="(wishlist.favorites$ | async) as favs">
+      <div *ngIf="favs.length === 0" class="empty">Aucun livre en favoris.</div>
+      <ul>
+        <li *ngFor="let b of favs">
+          <img [src]="b.cover_id ? 'https://covers.openlibrary.org/b/id/' + b.cover_id + '-S.jpg' : 'assets/placeholder.png'" alt="{{ b.title }}">
+          <a [routerLink]="['/books', (b.key || '').split('/').pop()]" (click)="close()">{{ b.title }}</a>
+          <button class="remove" (click)="wishlist.removeByKey(b.key)">Retirer</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
